@@ -17,10 +17,30 @@ class Events(db.Model):
 	start = db.Column(db.String())
 	end = db.Column(db.String())
 	description = db.Column(db.String())
-	tags = db.Column(db.String())
+	tags = db.relationship("Tags", cascade="all, delete, delete-orphan")
 	
+class Tags(db.Model):
+	id = db.Column(db.Integer(), primary_key=True)
+	resultid = db.Column(db.Integer, db.ForeignKey('Events.id'))
+	tag = db.Column(db.String(255))
 db.create_all()
-
+@app.route('/post', methods=['POST'])
+def post():
+	campus=request.form['dropdown']
+	location=request.form['location']
+	title = request.form['title']
+	start=request.form['start']
+	end=request.form['end']
+	description=request.form['description']
+	tags = request.form.getlist('tags')
+	event = Events (campus = campus, location = location, title = title, start = start, end = end, description = description)
+	for tag in tags:
+		event.tags.append(Tags(tag = tag))
+	if len(tags) == 0:
+		event.tags.append(Tags(tag == "Other"))
+	db.session.add(event)
+	db.session.commit()
+	
 @app.route('/api/visitors')
 def thisstopsitfromcrashingforsomereason():
     content = request.json
