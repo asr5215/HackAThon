@@ -16,7 +16,7 @@
 <body>
 	<header></header>
 <center>
-	<form id="form">
+	<form id="form" action="/post" method="post">
 		<input id="title" type="text" name="title" placeholder="New Event Title">
 		<br>
 		
@@ -53,11 +53,11 @@
 		<input id="location" type="text" name="location" placeholder="Building, Room">
 		<br>
 		
-		<b>Start : </b>
-		<input id="start" type="text" name="start" placeholder="Start time">
+		<b>Start Date: </b>
+		<input id="start" type="text" name="start" placeholder="yyyy-mm-ddT00:00:00">
 		
-		<b>End : </b>
-		<input id="end" type="text" name="end" placeholder="End time">
+		<b>End Date: </b>
+		<input id="end" type="text" name="end" placeholder="yyyy-mm-ddT00:00:00">
 		<br>
 		
 		<textarea id="description" name="description" rows="6" cols="66" placeholder="Description"></textarea>
@@ -104,11 +104,13 @@
 		<br>
 		
 		<div class="col-md-12">
-			<a href="index.html"><button id="cancel" type="button" class="btn btn-default">Cancel</button></a>
-			<button type="submit" class="btn btn-default">Submit</button>		
+			<a href="{{ url_for('home') }}"><button id="cancel" type="button" class="btn btn-default">Cancel</button></a>
+			<button id="submit" type="button" class="btn btn-default" onClick="check()">Submit</button>		
 		</div>
 		
 	</form>
 </center>
+<div id="snackbar">Error</div>
+<script type = "text/javascript"  src = "/static/addForm.js"></script>
 </body>
 </html>

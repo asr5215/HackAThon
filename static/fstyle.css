@@ -22,7 +22,7 @@ header{
 	margin-bottom: 2%;
 }
 #start{
-	margin-right: 5%;
+	margin-right: 1%;
 	margin-bottom: 2%;
 }
 #form{
@@ -52,4 +52,24 @@ header{
 #cancel:hover{
 	color: white;
 	background-color: #7A7A7A;
+}
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
