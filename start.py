@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+import os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///example.sqlite'
@@ -25,20 +26,25 @@ def thisstopsitfromcrashingforsomereason():
     content = request.json
 
 @app.route('/addForm')
-def survey():
+def addForm():
 	return render_template('addForm.html')
 	
 @app.route('/category')
-def survey():
+def category():
 	return render_template('category.html')
 	
 @app.route('/cal')
-def survey():
+def cal():
 	return render_template('cal.html')
+
+@app.route('/home')
+def home():
+    return render_template('index.html')
 	
 @app.route('/')
 def index():
     return render_template('index.html')
-
+	
+port = int(os.getenv('PORT', 8080))
 if __name__ == '__main__':
 	app.run(host='localhost', port=port, debug=True)
