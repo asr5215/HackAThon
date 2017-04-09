@@ -7,7 +7,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 # Role class
-class Events(db.Model, RoleMixin):
+class Events(db.Model):
 	id = db.Column(db.Integer(), primary_key=True)
 	campus = db.Column(db.String())
 	location = db.Column(db.String())
@@ -24,6 +24,18 @@ db.create_all()
 def thisstopsitfromcrashingforsomereason():
     content = request.json
 
+@app.route('/addForm')
+def survey():
+	return render_template('addForm.html')
+	
+@app.route('/category')
+def survey():
+	return render_template('category.html')
+	
+@app.route('/cal')
+def survey():
+	return render_template('cal.html')
+	
 @app.route('/')
 def index():
     return render_template('index.html')
