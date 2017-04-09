@@ -1,5 +1,5 @@
 function check(){
-	if (!checkTitle){
+	/*if (!checkTitle){
 	}
 	else if(!checkLocation){	
 	}
@@ -9,11 +9,11 @@ function check(){
 	}
 	else if(!checkDesc){		
 	}
-	else{
+	else{*/
 		show("Submit complete");
-		//document.getElementById("submit").type="submit";
-	}	
-}
+		document.getElementById("submit").type="submit";
+	//}
+}/*
 function checkTitle(){
 	var title = document.getElementById("title").value;
 	if (title == ""){
@@ -57,4 +57,4 @@ function show(a){
     x.className = "show";
     setTimeout(function(){
         x.className = x.className.replace("show", ""); }, 3000);
-}
+}*/

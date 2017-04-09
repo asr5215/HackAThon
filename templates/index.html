@@ -41,12 +41,18 @@
 		</ul>
 	</div>
 	<div id="article">
-		<div id="box" class = "boxed" style="margin-top: 5%;">
-			Box class
-		</div>
-		<div id="box" class = "boxed">
-			Box class 2
-		</div>
+		{% for event in events %}
+			{% if loop.index == 1 %}
+				<div id="box" class = "boxed" style="margin-top: 5%;">
+					{{ event.title }} <br/> {{ event.start }}
+				</div>
+			{% endif %}
+			{% if loop.index > 1 %}
+				<div id="box" class = "boxed">
+					{{ event.title }} <br/> {{ event.start }}
+				</div>
+			{% endif %}
+		{% endfor %}
 		
 	</div>
 	
@@ -102,6 +108,39 @@
 		  </div>
 		</div>
 	</div>
+	<!--
+	<table id="Database" style="width:30%" border="1">
+			<thead>
+				<tr>
+					<th>Campus </th>
+					<th>Location </th>
+					<th>Title </th>
+					<th>Date </th>
+					<th>Start </th>
+					<th>End </th>
+					<th>Description </th>
+					<th>Tags </th>
+				</tr>
+			</thead>
+			 
+			<tbody>
+				{% for event in events %}
+					<tr>
+						<td>{{ event.campus }}</td>
+						<td>{{ event.location }}</td>
+						<td>{{ event.title }}</td>
+						<td>{{ event.date }}</td>
+						<td>{{ event.start }}</td>
+						<td>{{ event.end }}</td>
+						<td>{{ event.description }}</td>
+						{% for tag in event.tags %}
+							<td>{{ tag.tag }} </td>
+						{% endfor %}
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	-->
 	
 </div>
 </body>

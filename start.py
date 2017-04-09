@@ -14,7 +14,6 @@ class Events(db.Model):
 	campus = db.Column(db.String())
 	location = db.Column(db.String())
 	title = db.Column(db.String())
-	date = db.Column(db.String())
 	start = db.Column(db.String())
 	end = db.Column(db.String())
 	description = db.Column(db.String())
@@ -35,12 +34,14 @@ def post():
 	description=request.form['description']
 	tags = request.form.getlist('tags')
 	event = Events (campus = campus, location = location, title = title, start = start, end = end, description = description)
+	
+	if len(tags) == 0:
+		event.tags.append(Tags(tag = "Other"))
 	for tag in tags:
 		event.tags.append(Tags(tag = tag))
-	if len(tags) == 0:
-		event.tags.append(Tags(tag == "Other"))
 	db.session.add(event)
 	db.session.commit()
+	return render_template('index.html', events = Events.query.all())
 	
 @app.route('/api/visitors')
 def thisstopsitfromcrashingforsomereason():
@@ -58,13 +59,17 @@ def category():
 def cal():
 	return render_template('cal.html')
 
+@app.route('/test')
+def test():
+	return render_template('test.html', events = Events.query.all())
+	
 @app.route('/home')
 def home():
-    return render_template('index.html')
+	return render_template('index.html', events = Events.query.all())
 	
 @app.route('/')
 def index():
-    return render_template('index.html')
+	return render_template('index.html', events = Events.query.all())
 	
 port = int(os.getenv('PORT', 8080))
 if __name__ == '__main__':
