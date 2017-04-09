@@ -1,0 +1,94 @@
+a{
+	color: white;
+}
+#jumbotron{
+	background-color:#221863;
+	color:white;
+	position: absolute;
+	top: 0;
+	bottom:80%;
+	left: 0;
+	right: 0;
+}
+#content{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: white;
+}
+#add{
+	margin-top: 5%;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-bottom: 1%;
+	width: 80%;
+}
+#sidebar{
+	position: absolute;
+	background-color: #C5C4C4;
+	bottom: 0;
+	top: 20%;
+	right: 0;
+}
+#navs{
+	position: absolute;
+	bottom:80%;
+}
+#article{
+	position: absolute;
+	top: 20%;
+	left: 2%;
+}
+.boxed {
+	border: 1px solid #e3e3e3;
+	background-color: #f5f5f5;
+	padding: 20px;
+	margin: 10px; 
+	color: black; 
+}
+.navbar-form{
+	margin-bottom: 15%;
+}
+.btn{
+	color: white;
+	background-color: #221863;
+}
+.btn:hover{
+	color: white;
+	background-color: #7A7A7A;
+}
+#dropdown{
+	padding: 2.5%;
+	width: 60%;
+	margin-left: 15%;
+	margin-top: 2%;
+	border-color: #ccc;
+}
+#go{
+	margin-right: 13%;
+	margin-top: 1.2%;
+	width: 10%;
+	float: right;
+	padding: 1% !important;
+}
+.nav-tabs{
+	border-bottom: 0px;
+}
+.nav-tabs>li.active>a{
+	background-color:white;
+	color: black;
+}
+.nav-tabs>li>a{
+	background-color: #C5C4C4;
+	color: black;
+}
+.nav-tabs>li.active>a:hover{
+	background-color: white;
+}
+.nav-tabs>li>a:hover{
+	background-color: white;
+}
+
+

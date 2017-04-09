@@ -1,0 +1,53 @@
+#calendar{
+	margin-top: 2%;
+}
+.fc-other-month{
+	color: #C6C6C6;
+}
+.fc-event{
+	cursor: pointer;
+}
+#jumbotron{
+	background-color:#221863;
+	color:white;
+	position: absolute;
+	top: 0;
+	bottom:80%;
+	left: 0;
+	right: 0;
+}
+#content{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: white;
+}
+#navs{
+	position: absolute;
+	bottom:80%;
+}
+#article{
+	position: absolute;
+	top: 20%;
+	left: 5%;
+	right: 5%;
+}
+.nav-tabs{
+	border-bottom: 0px;
+}
+.nav-tabs>li.active>a{
+	background-color:white;
+	color: black;
+}
+.nav-tabs>li>a{
+	background-color: #C5C4C4;
+	color: black;
+}
+.nav-tabs>li.active>a:hover{
+	background-color: white;
+}
+.nav-tabs>li>a:hover{
+	background-color: white;
+}
