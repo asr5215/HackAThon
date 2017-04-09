@@ -9,6 +9,7 @@ db = SQLAlchemy(app)
 
 # Role class
 class Events(db.Model):
+	__tablename__ = "Events"
 	id = db.Column(db.Integer(), primary_key=True)
 	campus = db.Column(db.String())
 	location = db.Column(db.String())
